@@ -1,0 +1,93 @@
+.title-container{
+  text-align: center;
+  /* font-weight: 900; */
+}
+
+.image-container{
+  min-width: 300px;
+  max-width: 500px;
+}
+.image-container img{
+  width: 90%;
+}
+.form-container{
+  min-width: 300px;
+  max-width: 500px;
+  padding: 5px;
+}
+.form-container h3{
+  padding-left: 5px;
+}
+.custom-button{
+  align-self: center;
+  margin: 0 auto;
+}
+.button-class button{
+  width: 150px;
+  background-color: #ff4f5a;
+  border: none;
+  border-radius: 15px;
+  padding: 3px 0px 3px 0px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.custom-form-input{
+  border-radius: 15px;
+}
+
+.main-accordion-section{
+  width: 100%;
+}
+
+.accordion-container{
+  padding: 5px;
+  min-width: 300px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.other-contact-container{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-left: calc(50% - 125px);
+  margin-right: calc(50% - 125px);
+}
+
+.child-other-contact-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 15px;
+  gap: 10px;
+  min-width: 250px;
+
+}
+.child-other-contact-container img{
+  width: 80px;
+}
+.child-other-contact-container button{
+  width: 150px;
+  background-color: #ff4f5a;
+  border: none;
+  border-radius: 15px;
+  padding: 3px 0px 3px 0px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+@media (min-width: 796px) {
+  .other-contact-container{
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 5px;
+  }
+  .child-other-contact-container{
+    box-shadow: 0px 0px 8px rgba(82, 82, 82, 0.349);
+  }
+}
