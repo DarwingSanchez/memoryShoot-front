@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { ProductosComponent } from './components/productos/productos.component';
+import { LandingStepsGirlComponent } from './components/landing-steps-girl/landing-steps-girl.component';
 
 
 @NgModule({
@@ -12,6 +14,8 @@ import { ContactoComponent } from './components/contacto/contacto.component';
     AppComponent,
     NavBarComponent,
     ContactoComponent,
+    ProductosComponent,
+    LandingStepsGirlComponent,
 
   ],
   imports: [
