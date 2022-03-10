@@ -12,6 +12,8 @@ const routes: Routes = [
 {path:'payment', component: PaymentComponent},
 {path:'payment-methods', component: PaymentMethodsComponent},
 
+
+
 { path: '', redirectTo: '/home', pathMatch: 'full'},
 { path: '**', component: Page404Component},
 
