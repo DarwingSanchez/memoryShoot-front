@@ -15,6 +15,7 @@
   background-color: #f7f7f7;
   border-radius: 20px !important;
   border: #695283 solid 1px;
+  height: 463px;
 }
 
 .btnlogin {
@@ -37,10 +38,11 @@
 }
 .bg-image {
   background: url(../../../assets/img/login.jpg);
-  background-size: 95%;
+  background-size: 85%;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #e9edef;
   border-radius: 20px;
   border: #695283 solid 1px;
+  height: 463px;
 }
