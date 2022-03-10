@@ -1,0 +1,49 @@
+* {
+  font-family: "Exo 2", sans-serif;
+}
+
+.clogin {
+  background: linear-gradient(
+    180deg,
+    rgba(211, 202, 221, 1) 6%,
+    rgba(255, 246, 240, 1) 100%
+  );
+  height: 100vh;
+}
+
+.ccardlogin {
+  background-color: #f7f7f7;
+  border-radius: 20px !important;
+  border: #695283 solid 1px;
+  height: 663px;
+}
+
+.btnlogin {
+  background-color: #6fa0d4;
+  border: 1px solid #6fa0d4;
+  margin-left: 35%;
+}
+.btnlogin:hover {
+  background-color: #efaab9;
+  border: #695283 solid 1px;
+  font-weight: bold;
+}
+
+.ctituloslogin {
+  color: #4276ad;
+  font-weight: bolder;
+}
+
+.form-label {
+  color: #4276ad;
+}
+.bg-image {
+  background: url(../../../assets/img/register.jpeg);
+  background-size: 85%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #e9edef;
+  border-radius: 20px;
+  border: #695283 solid 1px;
+  height: 663px;
+}
