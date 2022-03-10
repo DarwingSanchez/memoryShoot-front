@@ -7,6 +7,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { LandingStepsGirlComponent } from './components/landing-steps-girl/landing-steps-girl.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdmHomeComponent } from './components/adm-home/adm-home.component';
+import { AdmSalesComponent } from './components/adm-sales/adm-sales.component';
 
 
 @NgModule({
@@ -16,6 +19,9 @@ import { LandingStepsGirlComponent } from './components/landing-steps-girl/landi
     ContactoComponent,
     ProductosComponent,
     LandingStepsGirlComponent,
+    AdminComponent,
+    AdmHomeComponent,
+    AdmSalesComponent,
 
   ],
   imports: [

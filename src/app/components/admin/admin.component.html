@@ -1,0 +1,84 @@
+<section class="section-main-adm">
+  <!-- menu on the left -->
+  <div class="side-menu">
+    <!-- Logo -->
+    <div class="d-flex p-1 mt-3 mb-5">
+      <h4>Memorie's</h4>
+      <!-- <img class="logo" src="./../../../assets/img/MemoryShootlogo.png" alt="MemoryShoot logo"> -->
+    </div>
+    <!-- Menu -->
+    <div>
+      <h5 class="menu-word">Menu</h5>
+      <nav>
+        <ul class="ul-menu">
+          <li>
+            <button class="menu-option-button" (click)="chooseMenu('home')">
+              <span>
+                <div class="inside-button-style">
+                  <img class="menu-option-img" src="./../../../assets/img/home-icon.png" alt="Home icon">
+                  <p>Home</p>
+                </div>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button class="menu-option-button" (click)="chooseMenu('ventas')">
+              <span>
+                <div class="inside-button-style">
+                  <img class="menu-option-img" src="./../../../assets/img/sales-icon.png" alt="sales icon">
+                  <p>Ventas</p>
+                </div>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button class="menu-option-button">
+              <span>
+                <div class="inside-button-style">
+                  <img class="menu-option-img" src="./../../../assets/img/user-icon.png" alt="user icon">
+                  <p>Usuarios</p>
+                </div>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button class="menu-option-button">
+              <span>
+                <div class="inside-button-style">
+                  <img class="menu-option-img" src="./../../../assets/img/shopping-bag-icon.png" alt="Ordenes icon">
+                  <p>Ordenes</p>
+                </div>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+  <!-- center part  -->
+  <div class="home">
+    <header>
+      <div class="header-container">
+        <div class="profile-info">
+          <div class="profile-img-container"><img src="./../../../assets/img/face-adm.jpg" alt=""></div>
+          <h3>{{saludo}} {{admInfo.name}}!</h3>
+        </div>
+        <div class="d-flex flex-wrap gap-3 custom-header-icon-container">
+          <img  src="./../../../assets/img/email.png" alt="">
+          <img  src="./../../../assets/img/notification.png" alt="">
+          <img  src="./../../../assets/img/account .png" alt="">
+        </div>
+      </div>
+    </header>
+    <!-- Components display's -->
+    <div class="body-home">
+      <app-adm-home *ngIf="menuChoosed == 'home'"></app-adm-home>
+      <app-adm-sales *ngIf="menuChoosed == 'ventas'"></app-adm-sales>
+    </div>
+  </div>
+</section>
+
+
+
+
