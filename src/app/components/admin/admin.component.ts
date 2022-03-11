@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AdmHomeComponent } from '../adm-home/adm-home.component';
+import { AdminService } from 'src/app/services/admService/admin.service';
+
 
 @Component({
   selector: 'app-admin',
@@ -8,20 +9,31 @@ import { AdmHomeComponent } from '../adm-home/adm-home.component';
 })
 export class AdminComponent implements OnInit {
 
-  public date = new Date
-  public hour: number = 0
+  public date: Date;
+  public hour: number = 0;
   public saludo : string = '';
   public menuChoosed : string = 'home'
+
 
   public admInfo = {
     name: 'Darwing'
   }
 
-  constructor() { }
+  constructor(
+    private admService : AdminService
+  ) {
+    this.date = new Date;
+  }
 
   ngOnInit(): void {
+    this.date = new Date
     this.getHour()
     this.getAdmInfo()
+    this.createNewVisit()
+  }
+
+  createNewVisit(){
+    this.admService.getApiAdress()
   }
 
   getAdmInfo(){
@@ -49,8 +61,9 @@ export class AdminComponent implements OnInit {
 
   getHour(){
     this.hour = this.date.getHours()
+    console.log(this.hour)
     this.hour >= 0 && this.hour <= 11 ? this.saludo='Buenos días' :
-    this.hour < 11 && this.hour <= 5 ? this.saludo='Buenas tardes' :
+    this.hour > 11 && this.hour <= 17 ? this.saludo='Buenas tardes' :
     this.saludo = 'Buenas noches'
   }
 }

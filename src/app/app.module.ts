@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { LandingStepsGirlComponent } from './components/landing-steps-girl/landi
 import { AdminComponent } from './components/admin/admin.component';
 import { AdmHomeComponent } from './components/adm-home/adm-home.component';
 import { AdmSalesComponent } from './components/adm-sales/adm-sales.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -22,11 +24,13 @@ import { AdmSalesComponent } from './components/adm-sales/adm-sales.component';
     AdminComponent,
     AdmHomeComponent,
     AdmSalesComponent,
+    FooterComponent,
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

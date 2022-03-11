@@ -53,6 +53,7 @@
 .home{
   flex-grow: 1;
   margin: 10px;
+  margin-left: 30px;
 }
 .profile-info{
   display: flex;
