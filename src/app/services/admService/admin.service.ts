@@ -40,6 +40,10 @@ export class AdminService {
     return this.http.post(`${this.API_URL_GENERATE_GENERAL_REPORT}/send-general-report`, report)
   }
 
+  sendSalesReport(report: {}){
+    return this.http.post(`${this.API_URL_GENERATE_GENERAL_REPORT}/send-sales-report`, report)
+  }
+
   createVisit(ip: string){
     const date = new Date()
     let body = {

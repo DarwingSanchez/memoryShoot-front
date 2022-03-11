@@ -3,5 +3,5 @@ export interface Sale {
   productID: number,
   totalAmount: number,
   items: number
-  created: Date
+  created: string
 }

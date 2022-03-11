@@ -48,9 +48,6 @@ export class AdminComponent implements OnInit {
       case 'ventas':
         this.menuChoosed = 'ventas'
         break;
-      case 'usuarios':
-        this.menuChoosed = 'home'
-        break;
       case 'ordenes':
         this.menuChoosed = 'ordenes'
         break;
@@ -61,7 +58,6 @@ export class AdminComponent implements OnInit {
 
   getHour(){
     this.hour = this.date.getHours()
-    console.log(this.hour)
     this.hour >= 0 && this.hour <= 11 ? this.saludo='Buenos días' :
     this.hour > 11 && this.hour <= 17 ? this.saludo='Buenas tardes' :
     this.saludo = 'Buenas noches'

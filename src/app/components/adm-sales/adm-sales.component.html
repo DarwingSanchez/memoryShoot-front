@@ -7,23 +7,23 @@
       <div class="d-flex flex-wrap gap-3">
         <div class="left-little-containers d-flex flex-column align-items-center p-2">
           <h2>{{generalReport.totalSales}}</h2>
-          <h6>Sales</h6>
+          <h6>N° ventas</h6>
         </div>
-        <div class="left-little-containers d-flex flex-column align-items-center p-2">
+        <div class="left-little-containers d-flex flex-column align-items-center p-2 text-center">
           <h2>{{generalReport.totalIncome}}</h2>
-          <h6>Total income</h6>
-        </div>
-        <div class="left-little-containers d-flex flex-column align-items-center p-2">
-          <h2>{{generalReport.totalSpent}}</h2>
-          <h6>Total Spent</h6>
+          <h6>Total dinero ventas</h6>
         </div>
         <div class="left-little-containers d-flex flex-column align-items-center p-2">
           <h2>{{generalReport.totalNeto}}</h2>
-          <h6>Total Neto</h6>
+          <h6>Total Ganancias</h6> <!-- 30% de dinero en ventas -->
         </div>
         <div class="left-little-containers d-flex flex-column align-items-center p-2">
+          <h2>{{generalReport.totalSpent}}</h2>
+          <h6>Total Gastos</h6><!-- 10% de dinero en ventas -->
+        </div>
+        <div class="left-little-containers d-flex flex-column align-items-center p-2 text-center">
           <h2>{{generalReport.totalAvarage}}</h2>
-          <h6>Avarage</h6>
+          <h6>Promedio de ventas</h6>
         </div>
       </div>
     </div>
@@ -33,16 +33,16 @@
       <div><h2>Daily report</h2></div>
       <div class="d-flex flex-wrap gap-3">
         <div class="left-botton-containers d-flex flex-column align-items-center p-2">
-          <h2>{{generalReport.dailySale.totalToday}}</h2>
-          <h6>Today Sales</h6>
+          <h2>{{dailyReport.totalSales}}</h2>
+          <h6>N° ventas</h6>
         </div>
-        <div class="left-botton-containers d-flex flex-column align-items-center p-2">
-          <h2>{{generalReport.dailySale.avaregeToday}}</h2>
-          <h6>Today Avarage</h6>
+        <div class="left-botton-containers d-flex flex-column align-items-center p-2 text-center">
+          <h2>{{dailyReport.totalIncom}}</h2>
+          <h6>Total dinero ventas</h6>
         </div>
-        <div class="left-botton-containers d-flex flex-column align-items-center p-2">
-          <h2>{{generalReport.dailySale.avaregeToday}}</h2>
-          <h6>Total Neto</h6>
+        <div class="left-botton-containers d-flex flex-column align-items-center p-2 text-center">
+          <h2>{{dailyReport.totalAvarage}}</h2>
+          <h6>Promedio de ventas</h6>
         </div>
       </div>
     </div>
