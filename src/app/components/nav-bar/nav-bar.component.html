@@ -1,1 +1,4 @@
-<p>nav-bar works!</p>
+<form action="/upload" method="post" enctype="multipart/form-data">
+  <input type="file" name="image" (change)="onUpload($event)"/>
+  <img [src]="imgRta" alt="">
+</form>
