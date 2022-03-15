@@ -68,7 +68,7 @@
       <div class="custom-table">
         <table class="table">
           <thead>
-            <tr class="d-flex flex-wrap">
+            <tr >
               <th scope="col">Order ID</th>
               <th scope="col">Sale ID</th>
               <th scope="col">Address</th>
@@ -78,7 +78,7 @@
             </tr>
           </thead>
           <tbody *ngFor="let order of ordersDespatched">
-            <tr class="d-flex flex-wrap">
+            <tr >
               <th class="custom-order-option" scope="row">{{order._id}}</th>
               <td class="custom-order-option">{{order.saleID}}</td>
               <td class="custom-order-option">{{order.address}}</td>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Visit } from './../../models/visitModel';
 import { Sale } from 'src/app/models/saleModel';
-import { DatePipe } from '@angular/common';
+import { User } from 'src/app/models/userModel';
 import { Order } from 'src/app/models/orderModel';
 
 
@@ -15,6 +15,7 @@ export class AdminService {
   private API_URL_GENERATE_GENERAL_REPORT = 'http://localhost:5200/api/mailer'
   private API_URL_SALES = 'http://localhost:5200/api/sales'
   private API_URL_ORDERS = 'http://localhost:5200/api/orders'
+  private API_URL_USERS = 'http://localhost:5200/api/user'
   private ipAdress = ""
 
 
@@ -44,7 +45,7 @@ export class AdminService {
 
   /* HOMEADM */
   getUsers(){
-
+    return this.http.get<User[]>(`${this.API_URL_USERS}/get-users`)
   }
 
 

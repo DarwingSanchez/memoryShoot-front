@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admService/admin.service';
 
@@ -31,17 +32,32 @@ export class AdmHomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTotalVisits()
-    this.getSales()
+    this.getSales();
+    this.getUsers();
   }
 
   getSales(){
     this.adminService.getSales()
     .subscribe({
       next: data => {
-        /* Getting totalSales */
-        console.log(data)
-      }
+        this.totalSales = data.length
+      },
+      error: err => console.log(err)
     })
+  }
+
+  getUsers(){
+    this.adminService.getUsers()
+    .subscribe({
+      next: data => {
+        this.totalUsers = data.length
+      },
+      error: err => console.log(err)
+    })
+  }
+
+  getProducts(){
+
   }
   updateInfo(){
     this.generalReport = {
