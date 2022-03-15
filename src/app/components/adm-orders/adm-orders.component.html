@@ -1,0 +1,115 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sale information</h5>
+      </div>
+      <div class="modal-body">
+        <div>
+          <h5>Sale ID</h5>
+          <p>{{this.saleInfo._id}}</p>
+        </div>
+        <div>
+          <h5>Product ID</h5>
+          <p>{{this.saleInfo.productID}}</p>
+        </div>
+        <div>
+          <h5>Creation Date</h5>
+          <p>{{this.saleInfo.created}}</p>
+        </div>
+        <div>
+          <h5>Total Price</h5>
+          <p>{{this.saleInfo.totalPrice}}</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="cleanSaleSearchInput()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="adm-home-main-container d-flex flex-wrap mt-5 gap-5">
+
+  <section class="left-main-container d-flex flex-column gap-5">
+    <div class="d-flex flex-column">
+      <div><h2>Ordenes activas</h2></div>
+      <div class="custom-table">
+        <table class="table">
+          <thead>
+            <tr >
+              <th scope="col">Order ID</th>
+              <th scope="col">Sale ID</th>
+              <th scope="col">Address</th>
+              <th scope="col">City</th>
+              <th scope="col">State</th>
+              <th scope="col">Status</th>
+              <th scope="col">Despachar</th>
+            </tr>
+          </thead>
+          <tbody >
+            <tr *ngFor="let order of ordersToDespatch" >
+              <th class="custom-order-option" scope="row">{{order._id}}</th>
+              <td class="custom-order-option">{{order.saleID}}</td>
+              <td class="custom-order-option">{{order.address}}</td>
+              <td class="custom-order-option">{{order.city}}</td>
+              <td class="custom-order-option">{{order.state}}</td>
+              <td class="custom-order-option">{{order.status}}</td>
+              <td class="custom-order-option"><button class="despachar-button" (click)="despatchOrder(order._id)">Despachar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column">
+      <div><h2>Ordenes despachadas</h2></div>
+      <div class="custom-table">
+        <table class="table">
+          <thead>
+            <tr class="d-flex flex-wrap">
+              <th scope="col">Order ID</th>
+              <th scope="col">Sale ID</th>
+              <th scope="col">Address</th>
+              <th scope="col">City</th>
+              <th scope="col">State</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let order of ordersDespatched">
+            <tr class="d-flex flex-wrap">
+              <th class="custom-order-option" scope="row">{{order._id}}</th>
+              <td class="custom-order-option">{{order.saleID}}</td>
+              <td class="custom-order-option">{{order.address}}</td>
+              <td class="custom-order-option">{{order.city}}</td>
+              <td class="custom-order-option">{{order.state}}</td>
+              <td class="custom-order-option">{{order.status}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="rigth-main-container">
+    <div class="generalReport d-flex flex-column align-items-center justify-content-center text-center p-2 gap-2">
+      <h3>Buscar una venta</h3>
+      <p class="look-sale-description">Puedes buscar un venta por el ID si quieres ver más detalles de la orden</p>
+      <form action="">
+        <input type="text" class="input-sales-search" name="saleSearch" #saleSearch placeholder="Ingresa el ID" [(ngModel)]="saleID">
+        <button type="submit" (click)="getSale()" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <div class="svg-wrapper-1">
+            <div class="svg-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+              </svg>
+            </div>
+          </div>
+          <span>Buscar</span>
+        </button>
+      </form>
+    </div>
+  </section>
+</section>

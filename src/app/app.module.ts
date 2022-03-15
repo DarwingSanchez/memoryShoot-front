@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdmHomeComponent } from './components/adm-home/adm-home.component';
 import { AdmSalesComponent } from './components/adm-sales/adm-sales.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AdmOrdersComponent } from './components/adm-orders/adm-orders.component';
 
 
 @NgModule({
@@ -25,12 +27,14 @@ import { FooterComponent } from './components/footer/footer.component';
     AdmHomeComponent,
     AdmSalesComponent,
     FooterComponent,
+    AdmOrdersComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

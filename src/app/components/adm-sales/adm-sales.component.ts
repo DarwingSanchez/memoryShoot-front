@@ -48,16 +48,22 @@ export class AdmSalesComponent implements OnInit {
     if(Array.isArray(sales)){
       /* General report */
       this.generalReport.totalSales = sales.length;
-      this.generalReport.totalIncome = sales.reduce((previusValue, currentValue) => previusValue + currentValue.totalAmount, 0)
+      this.generalReport.totalIncome = sales.reduce((previusValue, currentValue) => previusValue + currentValue.totalPrice, 0)
       this.generalReport.totalSpent = .1 * this.generalReport.totalIncome //Gastos
       this.generalReport.totalNeto = (.3 * this.generalReport.totalIncome) - this.generalReport.totalSpent //Ganancias netas
       this.generalReport.totalAvarage = this.generalReport.totalIncome / this.generalReport.totalSales
 
       /* DailyReport */
-      let todayReport = sales.filter( item => item.created == "")
-      this.dailyReport.totalSales = todayReport.length;
-      this.dailyReport.totalIncom = todayReport.reduce((previusValue, currentValue) => previusValue + currentValue.totalAmount, 0)
-      this.dailyReport.totalAvarage = this.dailyReport.totalIncom / this.dailyReport.totalSales
+      const date = new Date;
+      let day = date.getDate(); // Día del mes
+      let month = date.getMonth(); // Mes del año, del 0 al 11, 0 siendo Enero
+      let year = date.getFullYear(); // Trae el año
+      let todayReport = sales.filter( item => item.created === `${day}/${month+1}/${year}`)
+      if(todayReport.length > 0){
+        this.dailyReport.totalSales = todayReport.length;
+        this.dailyReport.totalIncom = todayReport.reduce((previusValue, currentValue) => previusValue + currentValue.totalPrice, 0)
+        this.dailyReport.totalAvarage = this.dailyReport.totalIncom/this.dailyReport.totalSales
+      }
     }else{
 
     }

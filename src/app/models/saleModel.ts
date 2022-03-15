@@ -1,7 +1,6 @@
 export interface Sale {
-  _id: number,
+  _id: string,
   productID: number,
-  totalAmount: number,
-  items: number
-  created: string
+  totalPrice: number,
+  created: string,
 }

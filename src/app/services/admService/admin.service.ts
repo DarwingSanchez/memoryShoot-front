@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Visit } from './../../models/visitModel';
 import { Sale } from 'src/app/models/saleModel';
 import { DatePipe } from '@angular/common';
+import { Order } from 'src/app/models/orderModel';
 
 
 @Injectable({
@@ -13,6 +14,7 @@ export class AdminService {
   private API_URL_VISITS = 'http://localhost:5200/api/visits'
   private API_URL_GENERATE_GENERAL_REPORT = 'http://localhost:5200/api/mailer'
   private API_URL_SALES = 'http://localhost:5200/api/sales'
+  private API_URL_ORDERS = 'http://localhost:5200/api/orders'
   private ipAdress = ""
 
 
@@ -20,18 +22,32 @@ export class AdminService {
     private http : HttpClient
   ) { }
 
+
+  /* ORDERS-ADM */
+
+  getOrders(){
+    return this.http.get<Order[]>(`${this.API_URL_ORDERS}/get-orders`)
+  }
+
+  dispatchOrder(id:string){
+    return this.http.put<Order>(`${this.API_URL_ORDERS}/dispatch-order`, {id})
+  }
+
   /* SALESADM */
 
-
+  getOneSale(id: string){
+    return this.http.get<Sale>(`${this.API_URL_SALES}/get-sale/${id}`)
+  }
+  getSales(){
+    return this.http.get<Sale[]>(`${this.API_URL_SALES}/get-sales`)
+  }
 
   /* HOMEADM */
   getUsers(){
 
   }
 
-  getSales(){
-    return this.http.get<Sale[]>(`${this.API_URL_SALES}/get-sales`)
-  }
+
   getProducts(){
 
   }
