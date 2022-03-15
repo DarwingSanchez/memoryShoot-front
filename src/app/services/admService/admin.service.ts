@@ -95,4 +95,8 @@ export class AdminService {
   getVisits(){
     return this.http.get<Visit[]>(`${this.API_URL_VISITS}/get-visits`)
   }
+
+  createSale(body : Sale){
+    return this.http.post<Sale>(`${this.API_URL_SALES}/create-sale`,body)
+  }
 }
