@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/services/admService/admin.service';
 
 @Component({
   selector: 'app-calculadora-calendario',
@@ -11,7 +12,7 @@ export class CalculadoraCalendarioComponent implements OnInit {
   precioFotoCalendar = 1000;
   imagenDesignCalendar: Design = {};
   
-  constructor() { }
+  constructor(public admService: AdminService) { }
 
   ngOnInit(): void {}
   costoFotosCalendar() {
@@ -24,7 +25,9 @@ export class CalculadoraCalendarioComponent implements OnInit {
       (this.imagenDesignCalendar.precio || 0)
     );
   }
-
+  createOrder() {
+    console.log()
+  }
 }
 interface Design {
   precio?: number;

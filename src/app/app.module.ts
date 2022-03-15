@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -12,6 +12,7 @@ import { CalculadoraCalendarioComponent } from './components/calculadora-calenda
 import { NgxMaskModule } from 'ngx-mask';
 import { CalculadoraCamisetaComponent } from './components/calculadora-camiseta/calculadora-camiseta.component';
 import { FotosComponent } from './components/fotos/fotos.component'
+
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FotosComponent } from './components/fotos/fotos.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
