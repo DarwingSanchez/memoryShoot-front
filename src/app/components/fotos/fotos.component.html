@@ -1,0 +1,29 @@
+<app-nav-bar></app-nav-bar>
+<div class="fondo">
+  <div class="container">
+      <label for="exampleInputEmail1" class="form-label"
+      >Cuantas fotos quieres imprimir?</label
+    >
+    <div class="input-group">
+      <input
+        [(ngModel)]="numeroFotosImprimir"
+        type="text"
+        mask="99"
+        class="form-control"
+        aria-label="Album"
+        height="20"
+      />
+      <span class="input-group-text">{{
+        costoFotosImprimir() | currency: "$":"symbol":"4.0-0"
+      }}</span>
+    </div>
+    <span *ngIf="numeroFotosImprimir > 100" class="text-danger">El numero de fotos no puede ser mayor a 100.</span>
+
+    <label for="exampleInputEmail1" class="form-label">Subtotal</label>
+    <div class="input-group d-flex justify-content-center">
+      <span class="input-group-text">{{
+        subtotal() | currency: "$":"symbol":"4.0-0"
+      }}</span>
+    </div>
+  </div>
+</div>
