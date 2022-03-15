@@ -8,7 +8,7 @@
     rgba(211, 202, 221, 1) 6%,
     rgba(255, 246, 240, 1) 100%
   );
-  height: 100vh;
+  height: 100%;
 }
 
 .ccardlogin {
@@ -21,7 +21,7 @@
 .btnlogin {
   background-color: #6fa0d4;
   border: 1px solid #6fa0d4;
-  margin-left: 35%;
+  border-radius: 4px;
 }
 .btnlogin:hover {
   background-color: #efaab9;

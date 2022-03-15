@@ -1,1 +1,65 @@
-<p>client works!</p>
+<section class="csprofile d-flex justify-content-evenly align-items-center">
+  <div class="csectionclient d-flex justify-content-evenly align-items-evenly">
+    <div class="ccontainerinput d-flex align-items-center px-4">
+      <div class="ccontainerimg">
+        <img
+          class="w-100"
+          *ngIf="user"
+          src="{{ url_api + userService.selectedUser.image }}"
+          alt=""
+        />
+        <img class="csecondimg" [src]="sanitize(imageUrl)" alt="" />
+      </div>
+
+      <div
+        class="cusuario w-100 d-flex justify-content-center align-items-center"
+      >
+        <div><h5 class="ctituloinput mt-2">Cambiar imagen de perfil</h5></div>
+        <div class="d-flex justify-content-center align-items-center">
+          <input
+            class="cselectimg w-100"
+            id="nuestroinput"
+            (change)="capturarFile($event)"
+            type="file"
+            accept=".png,.jpg,.jpeg,.gif"
+          />
+        </div>
+        <div>
+          <button class="btn cbtnclient2" (click)="uploadImage()">
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="row col-lg-5 w-50">
+      <h3 class="">Bienvenido!</h3>
+      <p class="cdatosc">Nombre</p>
+      <p class="cdatos" c>E-mail</p>
+      <p class="cdatos">Telefono</p>
+      <div class="d-flex justify-content-around align-items-between">
+        <button class="chomeclient">Home</button>
+        <button class="cproductsclient">Productos</button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <table class="table row p-5 d-flex justify-content-center table-striped">
+      <thead>
+        <tr class="d-flex justify-content-between">
+          <th scope="col">#</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="d-flex justify-content-between">
+          <th class="cnumber" scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

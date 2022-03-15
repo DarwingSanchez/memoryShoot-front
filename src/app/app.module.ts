@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +12,6 @@ import { PaymentMethodsComponent } from './components/payment-methods/payment-me
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { Page404Component } from './components/page404/page404.component';
-import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,9 @@ import { PaymentComponent } from './components/payment/payment.component';
     LoginComponent,
     RegisterComponent,
     Page404Component,
-    PaymentComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
