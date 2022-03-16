@@ -1,0 +1,54 @@
+.csectionus {
+  background-image: url("../../../assets/img/fondorayas");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  height: 100%;
+}
+
+.cus {
+  flex-direction: column;
+  text-align: justify;
+  font-size: medium;
+}
+.custitle {
+  color: #613c8b;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.ctext {
+  color: #613c8b;
+}
+.cmision {
+  flex-direction: column;
+  text-align: justify;
+}
+
+.cvision {
+  flex-direction: column;
+  text-align: justify;
+}
+
+.cteam {
+  flex-direction: column;
+}
+
+.ccontainerteam {
+  flex-direction: row;
+}
+.cpersont {
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 120px;
+}
+.cimgt {
+  margin-top: 6px;
+  padding: 1rem;
+  width: 200px;
+  border-radius: 60px;
+}
+
+.ctextot {
+  text-align: center;
+}

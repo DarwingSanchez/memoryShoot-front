@@ -19,6 +19,7 @@ import { PaymentMethodsComponent } from './components/payment-methods/payment-me
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { Page404Component } from './components/page404/page404.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
 
 import { BannerCarruselComponent } from './components/banner-carrusel/banner-carrusel.component';
 import { HomeComponent } from './components/home/home.component';
@@ -27,8 +28,7 @@ import { CalculadoraAlbumComponent } from './components/calculadora-album/calcul
 import { CalculadoraCalendarioComponent } from './components/calculadora-calendario/calculadora-calendario.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { CalculadoraCamisetaComponent } from './components/calculadora-camiseta/calculadora-camiseta.component';
-import { FotosComponent } from './components/fotos/fotos.component'
-
+import { FotosComponent } from './components/fotos/fotos.component';
 
 @NgModule({
   declarations: [
@@ -48,19 +48,21 @@ import { FotosComponent } from './components/fotos/fotos.component'
     LoginComponent,
     RegisterComponent,
     Page404Component,
+    NosotrosComponent,
     BannerCarruselComponent,
     HomeComponent,
     CalculadoraAlbumComponent,
     CalculadoraCalendarioComponent,
     CalculadoraCamisetaComponent,
-    FotosComponent
+    FotosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    HttpClientModule,
   ],
 
   providers: [],
