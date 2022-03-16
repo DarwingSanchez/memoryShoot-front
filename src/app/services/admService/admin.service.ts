@@ -4,6 +4,7 @@ import { Visit } from './../../models/visitModel';
 import { Sale } from 'src/app/models/saleModel';
 import { User } from 'src/app/models/userModel';
 import { Order } from 'src/app/models/orderModel';
+import { DatePipe } from '@angular/common';
 
 
 @Injectable({
@@ -48,10 +49,7 @@ export class AdminService {
     return this.http.get<User[]>(`${this.API_URL_USERS}/get-users`)
   }
 
-
-  getProducts(){
-
-  }
+  /* SALESADM */
 
   sendGeneralReport(report: {}){
     return this.http.post(`${this.API_URL_GENERATE_GENERAL_REPORT}/send-general-report`, report)

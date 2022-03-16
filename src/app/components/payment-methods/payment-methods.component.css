@@ -1,0 +1,31 @@
+.clogos {
+  height: 2rem;
+}
+
+@media (max-width: 768px) {
+  .ccontlogos {
+    flex-direction: column;
+  }
+}
+
+.ccontlogos {
+  background-color: #ffffff;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px #4d4d4d48;
+}
+
+.medios {
+  color: #7b823b;
+}
+
+@media (max-width: 768px) {
+  .clogos2 {
+    flex-direction: column;
+  }
+}
+
+.ctitulos {
+  color: #7b823b;
+}

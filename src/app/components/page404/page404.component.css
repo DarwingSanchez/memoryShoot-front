@@ -1,0 +1,25 @@
+.cimg {
+  width: 80%;
+  height: 800px;
+  background: url(../../../assets/img/404.jpg);
+  background-size: cover;
+}
+.cfondo {
+  background: linear-gradient(
+      rgba(173, 174, 177, 0.75),
+      rgba(173, 174, 177, 0.75)
+    ),
+    url(../../../assets/img/4042.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+.ccentro {
+  font-family: "Fredoka One", cursive;
+  color: #fff6f0;
+  text-shadow: 2px 2px 2px #4276ad;
+}
+
+.clogonot {
+  width: 200px;
+}

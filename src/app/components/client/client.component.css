@@ -1,0 +1,92 @@
+.ccontainerimg {
+  border: #695283 solid 1px;
+  border-radius: 10px;
+  max-width: 70%;
+  box-shadow: 5px 5px 5px 5px #695283;
+}
+.csectionclient {
+  flex-direction: row wrap;
+}
+
+.csprofile {
+  flex-direction: column;
+
+  background: linear-gradient(
+    180deg,
+    rgba(211, 202, 221, 1) 6%,
+    rgba(255, 246, 240, 1) 100%
+  );
+  height: 100vh;
+}
+.ccontainerinput {
+  flex-direction: column;
+}
+
+.cusuario {
+  flex-direction: column;
+}
+.cinputimg {
+  max-width: 251px;
+}
+
+.csecondimg {
+  max-width: 251px;
+  display: flex;
+  justify-content: center;
+}
+.cbtnclient2 {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  height: 35px;
+  writing-mode: vertical-lr;
+  margin-block-start: 10px;
+  color: white;
+  border: none;
+  background-color: #4276ad;
+}
+
+.cbtnclient2:hover {
+  background-color: #d34967;
+  border: #efaab9 solid 3px;
+}
+
+.ctituloinput {
+  color: #695283;
+}
+
+.table {
+  color: #4276ad;
+  width: 100%;
+}
+
+.cnumber {
+  color: #4276ad !important;
+}
+
+.chomeclient {
+  width: 100px;
+  background-color: #6fa0d4;
+  border: none;
+  color: #ffffff;
+  border-radius: 6px;
+}
+
+.chomeclient:hover {
+  background-color: #7b823b;
+  border: #dae2ac solid 3px;
+  font-weight: bolder;
+}
+.cproductsclient {
+  width: 100px;
+  background-color: #e2a60d;
+  border: none;
+  color: #ffffff;
+  border-radius: 6px;
+}
+
+.cproductsclient:hover {
+  background-color: #6fa0d4 !important;
+  border: #b6d4f5 solid 1px;
+  font-weight: bolder;
+}

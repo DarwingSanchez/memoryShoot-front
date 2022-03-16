@@ -1,0 +1,46 @@
+<section class="clogin d-flex justify-content-center align-items-center">
+  <div class="row w-100 d-flex justify-content-between px-4">
+    <div class="cimglogin col-lg-5 bg-image mt-5"></div>
+
+    <div class="col-lg-5 mt-4 d-flex justify-content-center">
+      <div class="ccardlogin mt-4 p-4 shadow-lg rounded w-75">
+        <h2 class="ctituloslogin mt-4 mb-5 text-center">Iniciar Sesión</h2>
+        <form (submit)="login()">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Correo Electrónico</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              #email="ngModel"
+              [(ngModel)]="userService.selectedUser.email"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              #password="ngModel"
+              [(ngModel)]="userService.selectedUser.password"
+            />
+          </div>
+          <div class="text-center p-5">
+            <button
+              type="submit"
+              class="btnlogin bg-purple-pastel text-white text-center"
+            >
+              Iniciar Sesion
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

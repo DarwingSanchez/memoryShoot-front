@@ -1,0 +1,48 @@
+.bg-nav-custom {
+    background: #d3cadd;
+    
+        }
+    @media (min-width: 960px) {
+      .carousel-content-container {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+      }
+    
+      .content {
+        width: 50% !important;
+        margin-inline: 0 !important;
+      }
+    
+      .section_1 {
+        position: relative;
+        margin-top: 85px !important;
+      }
+    }
+    
+    .carousel-content-container {
+      width: 100%;
+      top: 0;
+    }
+    
+    .content {
+      width: 95%;
+      height: 100%;
+      margin-inline: auto;
+    }
+    
+    .card-textJuli {
+      list-style: none;
+      text-align: left;
+    }
+    
+    .form-1 {
+      border-radius: 5px;
+    }
+    
+    .section_1 {
+      position: relative;
+      margin-top: 53px;
+    }
+    
