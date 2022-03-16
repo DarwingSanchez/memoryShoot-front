@@ -22,6 +22,11 @@ export class CalculadoraCamisetaComponent implements OnInit {
       (this.imagenDesignCamiseta.precio || 0)
     );
   }
+
+  createOrder(){
+
+  }
+
 }
 interface Design {
   precio?: number;
