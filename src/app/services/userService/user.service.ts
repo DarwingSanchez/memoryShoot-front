@@ -17,7 +17,7 @@ export class UserService {
     this.selectedUser = new User();
   }
   loggedIn(){
-    return localStorage.getItem('token') ? true : false 
+    return localStorage.getItem('token') ? true : false
   }
 
   login(credentials: any) {
@@ -48,5 +48,14 @@ export class UserService {
   decodeToken(){
       let token = String(localStorage.getItem('token'))
       return jwt_decode(token)
+  }
+  saveImages(images: FileList, userId: string) {
+    const formData: FormData = new FormData();
+
+    Array.from(images).forEach((image) => {
+      formData.append('files', image);
+    });
+
+    return this.http.post(`${this.url_api}/save-images/${userId}`, formData);
   }
 }
