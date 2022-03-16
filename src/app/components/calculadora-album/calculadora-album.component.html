@@ -1,98 +1,104 @@
 <app-nav-bar></app-nav-bar>
 <div class="fondo">
-  <div class="container">
-    <div>
+  <div class="d-flex flex-wrap justify-content-center gap-5">
+
+    <div class="container">
+      <div>
+        <label for="exampleInputEmail1" class="form-label"
+          >Elige el material de tu portada</label
+        >
+      </div>
+      <div class="d-flex d-wrap align-items-center">
+        <div class="input-group">
+          <select
+            [(ngModel)]="tipoPortada"
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option selected></option>
+            <option value="40000">Madera</option>
+            <option value="35000">Plástico</option>
+            <option value="20000">Cartón</option>
+          </select>
+          <span class="input-group-text">{{
+            tipoPortada | currency: "$":"symbol":"4.0-0"
+          }}</span>
+        </div>
+      </div>
+
       <label for="exampleInputEmail1" class="form-label"
-        >Elige el material de tu portada</label
+        >Cuantas fotos quieres en tu Albúm?</label
       >
-    </div>
-    <div class="d-flex d-wrap align-items-center">
       <div class="input-group">
-        <select
-          [(ngModel)]="tipoPortada"
-          class="form-select"
-          aria-label="Default select example"
-        >
-          <option selected></option>
-          <option value="40000">Madera</option>
-          <option value="35000">Plástico</option>
-          <option value="20000">Cartón</option>
-        </select>
+        <input
+          [(ngModel)]="numeroFotos"
+          type="text"
+          mask="99"
+          class="form-control"
+          aria-label="Album"
+          height="20"
+        />
         <span class="input-group-text">{{
-          tipoPortada | currency: "$":"symbol":"4.0-0"
+          costoFotos() | currency: "$":"symbol":"4.0-0"
         }}</span>
       </div>
-    </div>
+      <span *ngIf="numeroFotos > 30" class="text-danger">El numero de fotos no puede ser mayor a 30.</span>
 
-    <label for="exampleInputEmail1" class="form-label"
-      >Cuantas fotos quieres en tu Albúm?</label
-    >
-    <div class="input-group">
-      <input
-        [(ngModel)]="numeroFotos"
-        type="text"
-        mask="99"
-        class="form-control"
-        aria-label="Album"
-        height="20"
-      />
-      <span class="input-group-text">{{
-        costoFotos() | currency: "$":"symbol":"4.0-0"
-      }}</span>
-    </div>
-    <span *ngIf="numeroFotos > 30" class="text-danger">El numero de fotos no puede ser mayor a 30.</span>
+      <div class="d-flex flex-column">
+        <label for="exampleInputEmail1" class="form-label">Elige tu diseño</label>
+        <div class="input-group justify-content-center">
+          <select
+            [(ngModel)]="imagenDesign"
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option selected [ngValue]="{}"></option>
+            <option
+              [ngValue]="{
+                url: '../assets/img/portadavintage.jpg',
+                precio: 40000
+              }"
+            >
+              Vintage
+            </option>
+            <option
+              [ngValue]="{ url: '../assets/img/protadamagic.jpg', precio: 55000 }"
+            >
+              Magic
+            </option>
+            <option
+              [ngValue]="{
+                url: '../assets/img/portadanatural.jpg',
+                precio: 60000
+              }"
+            >
+              Natural
+            </option>
+          </select>
 
-    <div class="d-flex flex-column">
-      <label for="exampleInputEmail1" class="form-label">Elige tu diseño</label>
-      <div class="input-group justify-content-center">
-        <select
-          [(ngModel)]="imagenDesign"
-          class="form-select"
-          aria-label="Default select example"
-        >
-          <option selected [ngValue]="{}"></option>
-          <option
-            [ngValue]="{
-              url: '../assets/img/portadavintage.jpg',
-              precio: 40000
-            }"
-          >
-            Vintage
-          </option>
-          <option
-            [ngValue]="{ url: '../assets/img/protadamagic.jpg', precio: 55000 }"
-          >
-            Magic
-          </option>
-          <option
-            [ngValue]="{
-              url: '../assets/img/portadanatural.jpg',
-              precio: 60000
-            }"
-          >
-            Natural
-          </option>
-        </select>
-
-        <span class="input-group-text">{{
-          imagenDesign.precio | currency: "$":"symbol":"4.0-0"
-        }}</span>
+          <span class="input-group-text">{{
+            imagenDesign.precio | currency: "$":"symbol":"4.0-0"
+          }}</span>
+        </div>
+        <div class="images col-auto d-flex justify-content-center">
+          <img [src]="imagenDesign.url" alt="" />
+        </div>
       </div>
-      <div class="images col-auto d-flex justify-content-center">
-        <img [src]="imagenDesign.url" alt="" />
+      <div class="input-group d-flex justify-content-center gap-5">
+        <label for="exampleInputEmail1" class="form-label">Subtotal: </label>
+        <span *ngIf="subtotal()" class="input-group-text">{{ subtotal() | currency: "$":"symbol":"4.0-0" }}</span>
+
       </div>
     </div>
-    <label for="exampleInputEmail1" class="form-label">Subtotal</label>
-    <div class="input-group d-flex justify-content-center">
-      <span class="input-group-text">{{
-        subtotal() | currency: "$":"symbol":"4.0-0"
-      }}</span>
+    <div class="upload-styles">
+      <app-imagenes-multiples></app-imagenes-multiples><br>
+      <button (click)="createOrder()"> <span class="text">Comprar</span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+      </button>
     </div>
-    <button (click)="createOrder()"> <span class="text">Comprar</span>
-      <span class="blob"></span>
-      <span class="blob"></span>
-      <span class="blob"></span>
-      <span class="blob"></span>
-    </button>
   </div>
+
 </div>

@@ -21,4 +21,8 @@ export class FotosComponent implements OnInit {
     );
   }
 
+  createOrder(){
+
+  }
+
 }

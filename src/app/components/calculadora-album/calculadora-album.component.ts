@@ -14,6 +14,9 @@ export class CalculadoraAlbumComponent implements OnInit {
   precioFoto = 1000;
   imagenDesign: Design = {};
 
+  subTotal = 0
+
+
   CalculadoraAlbum = {
     tipoPortada: this.tipoPortada,
     numeroFotos: this.numeroFotos,
@@ -24,7 +27,9 @@ export class CalculadoraAlbumComponent implements OnInit {
 
   constructor(public admService: AdminService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.subtotal()
+  }
 
   costoFotos() {
     return this.numeroFotos * this.precioFoto;

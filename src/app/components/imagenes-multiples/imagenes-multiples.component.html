@@ -1,8 +1,12 @@
 <section>
-  <input type="file" multiple (change)="displayImages($event)" />
+  <div class="d-flex flex-wrap gap-3 mt-3 mb-3">
+    <div class="file-select" id="src-file1">
+      <input type="file" multiple (change)="displayImages($event)"  name="src-file1" aria-label="Archivo"/>
+    </div>
+    <button class="btn" (click)="cargar()">Cargar</button>
+  </div>
   <div class="cimages d-flex">
     <img *ngFor="let file of imagesArray" [src]="getFileUrl(file)" alt="" />
   </div>
 
-  <button (click)="cargar()">Cargar</button>
 </section>

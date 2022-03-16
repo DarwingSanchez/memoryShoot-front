@@ -5,3 +5,60 @@
   height: 200px;
   width: auto;
 }
+.file-select {
+  position: relative;
+  display: inline-block;
+}
+
+.file-select::before {
+  background-color: #000000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  content: 'Seleccionar'; /* testo por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.file-select input[type="file"] {
+  opacity: 0;
+  width: 200px;
+  height: 32px;
+  display: inline-block;
+}
+
+#src-file1::before {
+  content: 'Seleccionar archivos';
+}
+.btn {
+  width: 200px;
+  height: 40px;
+  font-size: 1.1em;
+  cursor: pointer;
+  background-color: #171717;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: all .4s;
+ }
+
+ .btn:hover {
+  border-radius: 5px;
+  transform: translateY(-10px);
+  box-shadow: 0 7px 0 -2px #f85959,
+   0 15px 0 -4px #39a2db,
+   0 16px 10px -3px #39a2db;
+ }
+
+ .btn:active {
+  transition: all 0.2s;
+  transform: translateY(-5px);
+  box-shadow: 0 2px 0 -2px #f85959,
+   0 8px 0 -4px #39a2db,
+   0 12px 10px -3px #39a2db;
+ }

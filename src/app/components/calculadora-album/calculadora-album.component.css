@@ -8,7 +8,14 @@
 .container {
     padding-block-start: 100px;
     justify-content: center;
-    width: 500px;
+    max-width: 400px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.upload-styles{
+  padding-block-start: 100px;
 }
 .images img {
     margin-top: 30px;
