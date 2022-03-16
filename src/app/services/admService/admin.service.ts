@@ -5,7 +5,7 @@ import { Sale } from 'src/app/models/saleModel';
 import { User } from 'src/app/models/userModel';
 import { Order } from 'src/app/models/orderModel';
 import { DatePipe } from '@angular/common';
-
+import {NewSale} from 'src/app/models/saleModel';
 
 @Injectable({
   providedIn: 'root'
@@ -94,7 +94,7 @@ export class AdminService {
     return this.http.get<Visit[]>(`${this.API_URL_VISITS}/get-visits`)
   }
 
-  createSale(body : Sale){
+  createSale(body : NewSale){
     return this.http.post<Sale>(`${this.API_URL_SALES}/create-sale`,body)
   }
 }
