@@ -14,6 +14,15 @@ import { RegisterComponent } from './components/register/register.component';
 import { Page404Component } from './components/page404/page404.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 
+import { BannerCarruselComponent } from './components/banner-carrusel/banner-carrusel.component';
+import { HomeComponent } from './components/home/home.component';
+import { CalculadoraAlbumComponent } from './components/calculadora-album/calculadora-album.component';
+
+import { CalculadoraCalendarioComponent } from './components/calculadora-calendario/calculadora-calendario.component';
+import { NgxMaskModule } from 'ngx-mask';
+import { CalculadoraCamisetaComponent } from './components/calculadora-camiseta/calculadora-camiseta.component';
+import { FotosComponent } from './components/fotos/fotos.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +34,21 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
     RegisterComponent,
     Page404Component,
     NosotrosComponent,
+    BannerCarruselComponent,
+    HomeComponent,
+    CalculadoraAlbumComponent,
+    CalculadoraCalendarioComponent,
+    CalculadoraCamisetaComponent,
+    FotosComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    NgxMaskModule.forRoot(),
+    HttpClientModule,
+  ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
