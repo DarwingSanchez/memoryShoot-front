@@ -12,6 +12,7 @@ import { PaymentMethodsComponent } from './components/payment-methods/payment-me
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { Page404Component } from './components/page404/page404.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { Page404Component } from './components/page404/page404.component';
     LoginComponent,
     RegisterComponent,
     Page404Component,
+    NosotrosComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
