@@ -1,6 +1,6 @@
 <app-nav-bar></app-nav-bar>
 <div class="fondo">
-  <div class="d-flex flex-wrap justify-content-center gap-5">
+  <div class="d-flex flex-wrap justify-content-center gap-5 pb-5">
 
     <div class="container">
       <div>
@@ -84,13 +84,14 @@
           <img [src]="imagenDesign.url" alt="" />
         </div>
       </div>
-      <div class="input-group d-flex justify-content-center gap-5">
+      <div class="input-group d-flex justify-content-center gap-5 mt-3">
+
         <label for="exampleInputEmail1" class="form-label">Subtotal: </label>
         <span *ngIf="subtotal()" class="input-group-text">{{ subtotal() | currency: "$":"symbol":"4.0-0" }}</span>
-
       </div>
     </div>
-    <div class="upload-styles">
+    <div class="upload-styles d-flex flex-column align-items-center">
+      <h3>Sube los archivos</h3>
       <app-imagenes-multiples></app-imagenes-multiples><br>
       <button (click)="createOrder()"> <span class="text">Comprar</span>
         <span class="blob"></span>

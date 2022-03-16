@@ -28,7 +28,7 @@ export class CalculadoraAlbumComponent implements OnInit {
   constructor(public admService: AdminService) {}
 
   ngOnInit(): void {
-    this.subtotal()
+
   }
 
   costoFotos() {
