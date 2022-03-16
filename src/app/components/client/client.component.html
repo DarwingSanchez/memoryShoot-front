@@ -35,12 +35,12 @@
     </div>
     <div class="row col-lg-5 w-50">
       <h3 class="">Hola!</h3>
-      <p class="cdatosc">Nombre</p>
-      <p class="cdatos" c>E-mail</p>
-      <p class="cdatos">Telefono</p>
+      <p class="cdatosc">Nombre: {{userService.selectedUser.username}}</p>
+      <p class="cdatos" c>E-mail: {{userService.selectedUser.email}}</p>
+      <p class="cdatos">Telefono: {{userService.selectedUser.phone}}</p>
       <div class="d-flex justify-content-around align-items-between">
-        <button class="chomeclient">Home</button>
-        <button class="cproductsclient">Productos</button>
+        <a href="home"><button class="chomeclient">Home</button></a>
+        <a href="productos"><button class="cproductsclient">Productos</button></a>
       </div>
     </div>
   </div>

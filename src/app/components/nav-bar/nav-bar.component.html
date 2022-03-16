@@ -15,7 +15,7 @@
 
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <a class="navbar-brand me-2 ps-4" href="https://mdbgo.com/">
+      <a class="navbar-brand me-2 ps-4" href="home">
         <img
           src="assets/img/MemoryShootlogo.png"
           height="60"
@@ -26,80 +26,50 @@
       </a>
       <ul class="navbar-nav">
         <!-- Dropdown -->
-        <li class="nav-item dropdown">
+        <li class="nav-item">
           <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
+            class="nav-link"
+            href="productos"
           >
             PRODUCTOS
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li>
-              <a class="dropdown-item" href="#">Albumes</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Calendario</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Impresión de fotos</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Camisetas</a>
-            </li>
-          </ul>
+         
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
           <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
+            class="nav-link"
+            href="contacto"
           >
             CONTACTANOS
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li>
-              <a class="dropdown-item" href="#">Foto Tiras</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Collage poster</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Foto Postales</a>
-            </li>
-          </ul>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
           <a
-            class="nav-link dropdown-toggle"
+            class="nav-link"
             href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
           >
             QUIENES SOMOS
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li>
-              <a class="dropdown-item" href="#">Información de la Empresa</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Ubicación de la Empresa</a>
-            </li>
-          </ul>
         </li>
       </ul>
     </div>
-    <div class="d-flex align-items-center">
-      <button type="button" class="btn btn-light px-3 me-2">Log in</button>
-      <button type="button" class="btn btn-info me-3">Sign up</button>
+    <div *ngIf="!userService.loggedIn() else sesionIniciada"class="d-flex align-items-center">
+      <a href="login"><button type="button" class="btn btn-light px-3 me-2">Log in</button></a>
+      <a href="register"><button type="button" class="btn btn-info me-3">Sign up</button></a>
     </div>
+    <ng-template #sesionIniciada >
+      <div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="home">Home</a></li>
+            <li><a class="dropdown-item" href="client">Perfil</a></li>
+            <button (click)="logOut()" >Cerrar Sesión</button>
+          </ul>
+        </div>
+      </div>
+    </ng-template>
   </div>
 </nav>

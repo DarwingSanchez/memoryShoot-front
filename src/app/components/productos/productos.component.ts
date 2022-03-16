@@ -12,6 +12,10 @@ export class ProductosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  price: number = 5000
+  price1: number = 1000
+  price2: number = 61000
+  price3: number = 41000
+  price4: number = 66000
+  
 
 }

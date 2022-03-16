@@ -38,23 +38,36 @@ export class CalculadoraAlbumComponent implements OnInit {
     );
   }
   createOrder() {
-    const date = new Date;
-      let day = date.getDate(); // Día del mes
-      let month = date.getMonth(); // Mes del año, del 0 al 11, 0 siendo Enero
-      let year = date.getFullYear(); // Trae el año
+    const date = new Date();
+    let day = date.getDate(); // Día del mes
+    let month = date.getMonth(); // Mes del año, del 0 al 11, 0 siendo Enero
+    let year = date.getFullYear(); // Trae el año
     this.updateInfo();
     const newSale = {
       productID: this.CalculadoraAlbum.id,
       totalPrice: this.CalculadoraAlbum.total,
-      created : `${day}/${month+1}/${year}`
+      created: `${day}/${month + 1}/${year}`,
     };
-    console.log(newSale)
-    this.admService.createSale(newSale)
-    .subscribe({
-      next: data => console.log(data),
-      error: error => console.log(error), 
-    })
-
+    console.log("nueva venta",newSale);
+    this.admService.createSale(newSale).subscribe({
+      next: (data) => {
+        console.log(data)
+        const nuevaOrden = {
+          saleID: data._id,
+          address: "calle 8 # 36a - 22",
+          city: "Bogotá",
+          state: "Cundinamarca",
+          status: true,
+          created: data.created,
+        };
+        this.admService.createOrder(nuevaOrden)
+        .subscribe({
+          next: data => console.log(data),
+          error: error => console.log(error)
+        })
+      },
+      error: (error) => console.log(error),
+    });
   }
   updateInfo() {
     this.CalculadoraAlbum = {

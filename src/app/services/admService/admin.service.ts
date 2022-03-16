@@ -97,4 +97,8 @@ export class AdminService {
   createSale(body : NewSale){
     return this.http.post<Sale>(`${this.API_URL_SALES}/create-sale`,body)
   }
+  createOrder(body : any){
+    return this.http.post<Order>(`${this.API_URL_ORDERS}/create-order`,body)
+
+  }
 }
