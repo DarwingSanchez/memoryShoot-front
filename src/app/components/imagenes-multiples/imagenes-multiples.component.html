@@ -1,0 +1,8 @@
+<section>
+  <input type="file" multiple (change)="displayImages($event)" />
+  <div class="cimages d-flex">
+    <img *ngFor="let file of imagesArray" [src]="getFileUrl(file)" alt="" />
+  </div>
+
+  <button (click)="cargar()">Cargar</button>
+</section>

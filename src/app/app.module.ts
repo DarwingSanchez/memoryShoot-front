@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { Page404Component } from './components/page404/page404.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { ImagenesMultiplesComponent } from './components/imagenes-multiples/imagenes-multiples.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
     RegisterComponent,
     Page404Component,
     NosotrosComponent,
+    ImagenesMultiplesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
