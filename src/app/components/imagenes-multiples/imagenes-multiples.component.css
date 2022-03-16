@@ -1,0 +1,7 @@
+.cimages {
+  flex-wrap: wrap;
+}
+.cimages > img {
+  height: 200px;
+  width: auto;
+}

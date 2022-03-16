@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { Page404Component } from './components/page404/page404.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { ImagenesMultiplesComponent } from './components/imagenes-multiples/imagenes-multiples.component';
 
 import { BannerCarruselComponent } from './components/banner-carrusel/banner-carrusel.component';
 import { HomeComponent } from './components/home/home.component';
@@ -40,6 +41,7 @@ import { FotosComponent } from './components/fotos/fotos.component';
     CalculadoraCalendarioComponent,
     CalculadoraCamisetaComponent,
     FotosComponent,
+    ImagenesMultiplesComponent,
   ],
   imports: [
     BrowserModule,

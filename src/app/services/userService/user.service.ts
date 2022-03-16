@@ -41,4 +41,14 @@ export class UserService {
   getOneUser(userId: any) {
     return this.http.get<User>(`${this.url_api}/get-one-user/${userId}`);
   }
+
+  saveImages(images: FileList, userId: string) {
+    const formData: FormData = new FormData();
+
+    Array.from(images).forEach((image) => {
+      formData.append('files', image);
+    });
+
+    return this.http.post(`${this.url_api}/save-images/${userId}`, formData);
+  }
 }
