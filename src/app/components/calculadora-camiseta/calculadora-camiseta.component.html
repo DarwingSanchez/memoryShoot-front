@@ -1,67 +1,82 @@
 <app-nav-bar></app-nav-bar>
 <div class="fondo">
-  <div class="container">
+  <div class="d-flex flex-wrap justify-content-center gap-5 pb-5">
+    <div class="container">
       <label for="exampleInputEmail1" class="form-label"
-      >Cuantas fotos quieres en tu camiseta?</label
-    >
-    <div class="input-group">
-      <input
-        [(ngModel)]="numeroFotosCamiseta"
-        type="text"
-        mask="99"
-        class="form-control"
-        aria-label="Album"
-        height="20"
-      />
-      <span class="input-group-text">{{
-        costoFotosCamiseta() | currency: "$":"symbol":"4.0-0"
-      }}</span>
-    </div>
-    <span *ngIf="numeroFotosCamiseta > 6" class="text-danger">El numero de fotos no puede ser mayor a 6.</span>
-
-    <div class="d-flex flex-column">
-      <label for="exampleInputEmail1" class="form-label">Elige tu diseño</label>
-      <div class="input-group justify-content-center">
-        <select
-          [(ngModel)]="imagenDesignCamiseta"
-          class="form-select"
-          aria-label="Default select example"
-        >
-          <option selected [ngValue]="{}"></option>
-          <option
-            [ngValue]="{
-              url: '../assets/img/tipocamiseta1.jpg',
-              precio: 40000
-            }"
-          >
-            Polo
-          </option>
-          <option
-            [ngValue]="{ url: '../assets/img/tipocamiseta2.jpg', precio: 55000 }"
-          >
-            Colores en cuello V
-          </option>
-        </select>
-
+        >Cuantas fotos quieres en tu camiseta?</label
+      >
+      <div class="input-group">
+        <input
+          [(ngModel)]="numeroFotosCamiseta"
+          type="text"
+          mask="99"
+          class="form-control"
+          aria-label="Album"
+          height="20"
+        />
         <span class="input-group-text">{{
-          imagenDesignCamiseta.precio | currency: "$":"symbol":"4.0-0"
+          costoFotosCamiseta() | currency: "$":"symbol":"4.0-0"
         }}</span>
       </div>
-      <div class="images col-auto d-flex justify-content-center">
-        <img [src]="imagenDesignCamiseta.url" alt="" />
+      <span *ngIf="numeroFotosCamiseta > 6" class="text-danger"
+        >El numero de fotos no puede ser mayor a 6.</span
+      >
+
+      <div class="d-flex flex-column">
+        <label for="exampleInputEmail1" class="form-label"
+          >Elige tu diseño</label
+        >
+        <div class="input-group justify-content-center">
+          <select
+            [(ngModel)]="imagenDesignCamiseta"
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option selected [ngValue]="{}"></option>
+            <option
+              [ngValue]="{
+                url: '../assets/img/tipocamiseta1.jpg',
+                precio: 40000
+              }"
+            >
+              Polo
+            </option>
+            <option
+              [ngValue]="{
+                url: '../assets/img/tipocamiseta2.jpg',
+                precio: 55000
+              }"
+            >
+              Colores en cuello V
+            </option>
+          </select>
+
+          <span class="input-group-text">{{
+            imagenDesignCamiseta.precio | currency: "$":"symbol":"4.0-0"
+          }}</span>
+        </div>
+        <div class="images col-auto d-flex justify-content-center">
+          <img [src]="imagenDesignCamiseta.url" alt="" />
+        </div>
+      </div>
+
+      <div class="input-group d-flex justify-content-center gap-5 mt-3">
+        <label for="exampleInputEmail1" class="form-label">Subtotal</label>
+        <span class="input-group-text">{{
+          subtotal() | currency: "$":"symbol":"4.0-0"
+        }}</span>
       </div>
     </div>
-    <label for="exampleInputEmail1" class="form-label">Subtotal</label>
-    <div class="input-group d-flex justify-content-center">
-      <span class="input-group-text">{{
-        subtotal() | currency: "$":"symbol":"4.0-0"
-      }}</span>
+    <div class="upload-styles d-flex flex-column align-items-center">
+      <h3>Sube los archivos</h3>
+      <app-imagenes-multiples></app-imagenes-multiples><br />
+      <button (click)="createOrder()">
+        <span class="text">Comprar</span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+        <span class="blob"></span>
+      </button>
     </div>
-    <button (click)="createOrder()"> <span class="text">Comprar</span>
-      <span class="blob"></span>
-      <span class="blob"></span>
-      <span class="blob"></span>
-      <span class="blob"></span>
-    </button>
   </div>
 </div>

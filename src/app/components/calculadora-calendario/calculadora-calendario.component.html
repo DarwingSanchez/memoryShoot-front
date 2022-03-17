@@ -1,11 +1,11 @@
 <app-nav-bar></app-nav-bar>
 <div class="fondo">
   <div class="d-flex flex-wrap justify-content-center gap-5 pb-5">
-
     <div class="container">
-
       <div>
-        <label for="exampleInputEmail1" class="form-label">Elige el material</label>
+        <label for="exampleInputEmail1" class="form-label"
+          >Elige el material</label
+        >
       </div>
 
       <div class="d-flex d-wrap align-items-center">
@@ -26,7 +26,9 @@
         </div>
       </div>
 
-      <label for="exampleInputEmail1" class="form-label">Cuantas fotos quieres en tu calendario?</label>
+      <label for="exampleInputEmail1" class="form-label"
+        >Cuantas fotos quieres en tu calendario?</label
+      >
 
       <div class="input-group">
         <input
@@ -37,13 +39,19 @@
           aria-label="Album"
           height="20"
         />
-        <span class="input-group-text">{{ costoFotosCalendar() | currency: "$":"symbol":"4.0-0"}}</span>
+        <span class="input-group-text">{{
+          costoFotosCalendar() | currency: "$":"symbol":"4.0-0"
+        }}</span>
       </div>
 
-      <span *ngIf="numeroFotosCalendar > 30" class="text-danger">El numero de fotos no puede ser mayor a 30.</span>
+      <span *ngIf="numeroFotosCalendar > 12" class="text-danger"
+        >El numero de fotos no puede ser mayor a 12.</span
+      >
 
       <div class="d-flex flex-column">
-        <label for="exampleInputEmail1" class="form-label">Elige tu diseño</label>
+        <label for="exampleInputEmail1" class="form-label"
+          >Elige tu diseño</label
+        >
         <div class="input-group justify-content-center">
           <select
             [(ngModel)]="imagenDesignCalendar"
@@ -60,7 +68,10 @@
               libro Calendar
             </option>
             <option
-              [ngValue]="{ url: '../assets/img/calendar-imagen2.png', precio: 55000 }"
+              [ngValue]="{
+                url: '../assets/img/calendar-imagen2.png',
+                precio: 55000
+              }"
             >
               Piramide Calendar
             </option>
@@ -74,7 +85,9 @@
             </option>
           </select>
 
-          <span class="input-group-text">{{ imagenDesignCalendar.precio | currency: "$":"symbol":"4.0-0" }}</span>
+          <span class="input-group-text">{{
+            imagenDesignCalendar.precio | currency: "$":"symbol":"4.0-0"
+          }}</span>
         </div>
 
         <div class="images col-auto d-flex justify-content-center">
@@ -83,16 +96,18 @@
 
         <div class="input-group d-flex justify-content-center gap-5 mt-3">
           <label for="exampleInputEmail1" class="form-label">Subtotal</label>
-          <span *ngIf="subtotal()"  class="input-group-text">{{ subtotal() | currency: "$":"symbol":"4.0-0" }}</span>
+          <span *ngIf="subtotal()" class="input-group-text">{{
+            subtotal() | currency: "$":"symbol":"4.0-0"
+          }}</span>
         </div>
-
       </div>
       <!-- End container -->
     </div>
     <div class="upload-styles d-flex flex-column align-items-center">
       <h3>Sube los archivos</h3>
-      <app-imagenes-multiples></app-imagenes-multiples><br>
-      <button (click)="createOrder()"> <span class="text">Comprar</span>
+      <app-imagenes-multiples></app-imagenes-multiples><br />
+      <button (click)="createOrder()">
+        <span class="text">Comprar</span>
         <span class="blob"></span>
         <span class="blob"></span>
         <span class="blob"></span>

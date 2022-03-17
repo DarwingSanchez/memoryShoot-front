@@ -3,7 +3,7 @@ import { User } from 'src/app/models/userModel';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import jwt_decode from "jwt-decode";
+import jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
@@ -16,8 +16,8 @@ export class UserService {
   constructor(public http: HttpClient, public router: Router) {
     this.selectedUser = new User();
   }
-  loggedIn(){
-    return localStorage.getItem('token') ? true : false
+  loggedIn() {
+    return localStorage.getItem('token') ? true : false;
   }
 
   login(credentials: any) {
@@ -45,9 +45,9 @@ export class UserService {
   getOneUser(userId: any) {
     return this.http.get<User>(`${this.url_api}/get-one-user/${userId}`);
   }
-  decodeToken(){
-      let token = String(localStorage.getItem('token'))
-      return jwt_decode(token)
+  decodeToken(): any {
+    let token = String(localStorage.getItem('token'));
+    return jwt_decode(token || 'error');
   }
   saveImages(images: FileList, userId: string) {
     const formData: FormData = new FormData();
@@ -57,5 +57,12 @@ export class UserService {
     });
 
     return this.http.post(`${this.url_api}/save-images/${userId}`, formData);
+  }
+
+  isAdmin() {
+    const { permissions } = this.decodeToken();
+    if (permissions.admin) return true;
+
+    return false;
   }
 }

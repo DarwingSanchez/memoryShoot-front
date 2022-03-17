@@ -27,46 +27,48 @@
       <ul class="navbar-nav">
         <!-- Dropdown -->
         <li class="nav-item">
-          <a
-            class="nav-link"
-            href="productos"
-          >
-            PRODUCTOS
-          </a>
-
+          <a class="nav-link" href="productos"> PRODUCTOS </a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            href="contacto"
-          >
-            CONTACTANOS
-          </a>
+          <a class="nav-link" href="contacto"> CONTACTANOS </a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            href="nosotros"
-          >
-            QUIENES SOMOS
-          </a>
+          <a class="nav-link" href="nosotros"> QUIENES SOMOS </a>
         </li>
       </ul>
     </div>
-    <div *ngIf="!userService.loggedIn() else sesionIniciada"class="d-flex align-items-center">
-      <a href="login"><button type="button" class="btn btn-light px-3 me-2">Log in</button></a>
-      <a href="register"><button type="button" class="btn btn-info me-3">Sign up</button></a>
+    <div
+      *ngIf="!userService.loggedIn(); else sesionIniciada"
+      class="d-flex align-items-center"
+    >
+      <a href="login"
+        ><button type="button" class="btn btn-light px-3 me-2">
+          Log in
+        </button></a
+      >
+      <a href="register"
+        ><button type="button" class="btn btn-info me-3">Sign up</button></a
+      >
     </div>
-    <ng-template #sesionIniciada >
+    <ng-template #sesionIniciada>
       <div>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Dropdown button
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li><a class="dropdown-item" href="home">Home</a></li>
+            <li *ngIf="userService.isAdmin()">
+              <a class="dropdown-item" href="admin">Admin</a>
+            </li>
             <li><a class="dropdown-item" href="client">Perfil</a></li>
-            <button (click)="logOut()" >Cerrar Sesión</button>
+            <button (click)="logOut()">Cerrar Sesión</button>
           </ul>
         </div>
       </div>

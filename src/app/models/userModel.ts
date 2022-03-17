@@ -5,9 +5,7 @@ export class User {
   email: string;
   password: string;
   phone: string;
-  permissions: {
-    client: boolean;
-  };
+  permissions: any;
   isLogged: boolean;
   confirmPassword: string;
   created: string;
@@ -19,9 +17,7 @@ export class User {
     email = '',
     password = '',
     phone = '',
-    permissions = {
-      client: true,
-    },
+    permissions = {},
     isLogged = false,
     confirmPassword = '',
     created = '',

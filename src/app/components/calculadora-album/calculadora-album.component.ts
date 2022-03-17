@@ -14,8 +14,7 @@ export class CalculadoraAlbumComponent implements OnInit {
   precioFoto = 1000;
   imagenDesign: Design = {};
 
-  subTotal = 0
-
+  subTotal = 0;
 
   CalculadoraAlbum = {
     tipoPortada: this.tipoPortada,
@@ -27,9 +26,7 @@ export class CalculadoraAlbumComponent implements OnInit {
 
   constructor(public admService: AdminService) {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   costoFotos() {
     return this.numeroFotos * this.precioFoto;
@@ -53,23 +50,22 @@ export class CalculadoraAlbumComponent implements OnInit {
       totalPrice: this.CalculadoraAlbum.total,
       created: `${day}/${month + 1}/${year}`,
     };
-    console.log("nueva venta",newSale);
+    console.log('nueva venta', newSale);
     this.admService.createSale(newSale).subscribe({
       next: (data) => {
-        console.log(data)
+        console.log(data);
         const nuevaOrden = {
           saleID: data._id,
-          address: "calle 8 # 36a - 22",
-          city: "Bogotá",
-          state: "Cundinamarca",
+          address: 'calle 8 # 36a - 22',
+          city: 'Bogotá',
+          state: 'Cundinamarca',
           status: true,
           created: data.created,
         };
-        this.admService.createOrder(nuevaOrden)
-        .subscribe({
-          next: data => console.log(data),
-          error: error => console.log(error)
-        })
+        this.admService.createOrder(nuevaOrden).subscribe({
+          next: (data) => console.log(data),
+          error: (error) => console.log(error),
+        });
       },
       error: (error) => console.log(error),
     });
