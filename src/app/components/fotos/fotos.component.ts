@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admService/admin.service';
 import { UserService } from 'src/app/services/userService/user.service';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-fotos',
@@ -15,7 +18,8 @@ export class FotosComponent implements OnInit {
 
   constructor(
     public admService: AdminService,
-    public userService: UserService
+    public userService: UserService,
+    public router: Router
   ) {}
 
   Fotos = {
@@ -61,6 +65,13 @@ export class FotosComponent implements OnInit {
         this.admService.createOrder(nuevaOrden).subscribe({
           next: (data) => {
             const token = this.userService.decodeToken();
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              text: `Gracias por tu compra`,
+              showConfirmButton: true,
+            });
+            this.router.navigate(['/client']);
             this.userService.crearOrden(token.user_id, ordenCreada).subscribe({
               next: (data) => {
                 console.log(data);

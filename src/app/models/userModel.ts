@@ -18,7 +18,9 @@ export class User {
     email = '',
     password = '',
     phone = '',
-    permissions = {},
+    permissions = {
+      client: true,
+    },
     isLogged = false,
     confirmPassword = '',
     created = '',

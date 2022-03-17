@@ -32,13 +32,15 @@ export class RegisterComponent implements OnInit {
     } = this.userService.selectedUser;
 
     console.log(this.userService.selectedUser);
-    if (!phone || !username || !email || !password || !confirmPassword)
+    if (!phone || !username || !email || !password || !confirmPassword) {
       Swal.fire({
         position: 'center',
         icon: 'error',
         text: 'Uno o mas campos estan vacios',
         showConfirmButton: true,
       });
+      return;
+    }
 
     if (password !== confirmPassword) {
       Swal.fire({
@@ -49,6 +51,7 @@ export class RegisterComponent implements OnInit {
       });
       this.userService.selectedUser.password = '';
       this.userService.selectedUser.confirmPassword = '';
+      return;
     }
 
     this.userService
@@ -61,9 +64,9 @@ export class RegisterComponent implements OnInit {
             text: `Usuario creado correctamente`,
             showConfirmButton: true,
           });
+          this.router.navigate(['/login']);
         },
         error: () => {},
       });
-    this.router.navigate(['/login']);
   }
 }
