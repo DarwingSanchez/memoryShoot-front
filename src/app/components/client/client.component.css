@@ -62,8 +62,14 @@
 
 .cnumber {
   color: #4276ad !important;
+  max-width: 150px;
+  overflow-y: hidden;
+  overflow: auto;
 }
 
+.cnumber::-webkit-scrollbar {
+  display: none;
+}
 .chomeclient {
   width: 100px;
   background-color: #6fa0d4;

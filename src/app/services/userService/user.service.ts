@@ -65,4 +65,8 @@ export class UserService {
 
     return false;
   }
+
+  crearOrden(id: number, body: any) {
+    return this.http.post(`${this.url_api}/crear-orden/${id}`, body);
+  }
 }

@@ -35,12 +35,14 @@
     </div>
     <div class="row col-lg-5 w-50">
       <h3 class="">Hola!</h3>
-      <p class="cdatosc">Nombre: {{userService.selectedUser.username}}</p>
-      <p class="cdatos" c>E-mail: {{userService.selectedUser.email}}</p>
-      <p class="cdatos">Telefono: {{userService.selectedUser.phone}}</p>
+      <p class="cdatosc">Nombre: {{ userService.selectedUser.username }}</p>
+      <p class="cdatos" c>E-mail: {{ userService.selectedUser.email }}</p>
+      <p class="cdatos">Telefono: {{ userService.selectedUser.phone }}</p>
       <div class="d-flex justify-content-around align-items-between">
         <a href="home"><button class="chomeclient">Home</button></a>
-        <a href="productos"><button class="cproductsclient">Productos</button></a>
+        <a href="productos"
+          ><button class="cproductsclient">Productos</button></a
+        >
       </div>
     </div>
   </div>
@@ -50,16 +52,16 @@
         <tr class="d-flex justify-content-between">
           <th scope="col">#</th>
           <th scope="col">Producto</th>
+          <th scope="col">Precio</th>
           <th scope="col">Fecha</th>
-          <th scope="col">Estado</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="d-flex justify-content-between">
-          <th class="cnumber" scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+        <tr *ngFor="let order of orders" class="d-flex justify-content-between">
+          <th class="cnumber" scope="row">{{ order._id }}</th>
+          <td>{{ order.productID }}</td>
+          <td>{{ order.totalPrice }}</td>
+          <td>{{ order.created }}</td>
         </tr>
       </tbody>
     </table>

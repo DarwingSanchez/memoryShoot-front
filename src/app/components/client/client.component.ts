@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import jwt_decode from 'jwt-decode';
+import { Order } from 'src/app/models/orderModel';
+import { Sale } from 'src/app/models/saleModel';
 import { User } from 'src/app/models/userModel';
 import { UserService } from 'src/app/services/userService/user.service';
 import { environment } from 'src/environments/environment';
@@ -14,6 +16,14 @@ export class ClientComponent implements OnInit {
   public imageUrl: string = '';
   public image: File | undefined = undefined;
   public user: User | undefined = undefined;
+  public orders: Sale[] = [
+    {
+      _id: '',
+      productID: 0,
+      totalPrice: 0,
+      created: '',
+    },
+  ];
   url_api = `${environment.API_URL}/`.replace('/api', '');
 
   constructor(
@@ -59,6 +69,7 @@ export class ClientComponent implements OnInit {
       next: (data) => {
         console.log(data);
         this.userService.selectedUser = data;
+        this.orders = this.userService.selectedUser.orders;
         console.log(this.userService.selectedUser);
       },
       error: (error) => console.log(error),

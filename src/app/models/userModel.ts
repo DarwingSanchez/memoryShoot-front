@@ -10,6 +10,7 @@ export class User {
   confirmPassword: string;
   created: string;
   image: string;
+  orders: any;
 
   constructor(
     _id = '',
@@ -22,6 +23,7 @@ export class User {
     confirmPassword = '',
     created = '',
     image = '',
+    orders = [],
     user_id = ''
   ) {
     this._id = _id;
@@ -35,5 +37,6 @@ export class User {
     this.created = created;
     this.image = image;
     this.user_id = user_id;
+    this.orders = orders;
   }
 }
