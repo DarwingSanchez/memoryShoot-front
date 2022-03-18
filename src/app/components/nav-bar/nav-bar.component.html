@@ -47,29 +47,31 @@
         </button></a
       >
       <a href="register"
-        ><button type="button" class="btn btn-info me-3">Sign up</button></a
+        ><button type="button" class=" singup btn btn-info me-3">Sign up</button></a
       >
     </div>
     <ng-template #sesionIniciada>
       <div>
         <div class="dropdown">
           <button
-            class="btn btn-secondary dropdown-toggle"
+            class="btn-client btn-secondary dropdown-toggle"
             type="button"
             id="dropdownMenuButton1"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Dropdown button
+            Opciones
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="home">Home</a></li>
-            <li *ngIf="userService.isAdmin()">
-              <a class="dropdown-item" href="admin">Admin</a>
-            </li>
-            <li><a class="dropdown-item" href="client">Perfil</a></li>
-            <button (click)="logOut()">Cerrar Sesión</button>
-          </ul>
+              <li class="btn-option"><a class="dropdown-item" href="home">Home</a></li>
+              <li class="btn-option" *ngIf="userService.isAdmin()">
+                <a class="dropdown-item" href="admin">Admin</a>
+              </li>
+              <li class="btn-option" ><a class="dropdown-item" href="client">Perfil</a></li>
+              <li>
+              <button class="btn-client2" (click)="logOut()">Cerrar Sesión</button>
+              </li>
+            </ul>
         </div>
       </div>
     </ng-template>

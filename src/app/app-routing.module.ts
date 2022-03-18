@@ -15,14 +15,16 @@ import { CalculadoraCalendarioComponent } from './components/calculadora-calenda
 import { CalculadoraCamisetaComponent } from './components/calculadora-camiseta/calculadora-camiseta.component';
 import { FotosComponent } from './components/fotos/fotos.component';
 import { HomeComponent } from './components/home/home.component';
+import { UserGuard } from './user.guard';
+import { AdminGuard } from './admin.guard';
 
 const routes: Routes = [
   {path: 'contacto', component: ContactoComponent},
   {path: 'productos', component: ProductosComponent},
-  {path: 'admin', component: AdminComponent},
+  {path: 'admin', component: AdminComponent, canActivate: [AdminGuard]},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'client', component: ClientComponent },
+  { path: 'client', component: ClientComponent, canActivate: [UserGuard] },
   { path: 'payment-methods', component: PaymentMethodsComponent },
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'calculadora-album', component: CalculadoraAlbumComponent },
@@ -32,6 +34,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: Page404Component },
+
 
 ];
 

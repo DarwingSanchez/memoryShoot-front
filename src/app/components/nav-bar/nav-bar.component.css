@@ -45,4 +45,23 @@
       position: relative;
       margin-top: 53px;
     }
+    .singup {
+      background-color: #6fa0d4;
+      color : white;
+    }
+    .btn-client {
+      background-color: #6fa0d4;
+      border-radius: 10px;
+    }
+    .btn-client2 {
+      background-color: #6fa0d4;
+      color: white;
+    }
+    .dropdown {
+      padding-right: 40px;
+    }
+    .dropdown-menu {
+      min-width:auto;
+      padding: 6px;
+   }
     

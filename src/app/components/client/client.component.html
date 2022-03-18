@@ -18,13 +18,17 @@
       >
         <div><h5 class="ctituloinput mt-2">Cambiar imagen de perfil</h5></div>
         <div class="d-flex justify-content-center align-items-center">
-          <input
-            class="cselectimg w-100"
-            id="nuestroinput"
-            (change)="capturarFile($event)"
-            type="file"
-            accept=".png,.jpg,.jpeg,.gif"
-          />
+          <div class="file-select" id="src-file1">
+            <input
+              class="cselectimg"
+              id="nuestroinput"
+              (change)="capturarFile($event)"
+              type="file"
+              accept=".png,.jpg,.jpeg,.gif"
+              name="src-file1"
+              aria-label="Archivo"
+            />
+          </div>
         </div>
         <div>
           <button class="btn cbtnclient2" (click)="uploadImage()">
