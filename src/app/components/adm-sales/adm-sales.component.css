@@ -3,6 +3,11 @@
   background-color: #5ac9fd5b;
   border-radius: 15px;
 }
+.left-little-containers{
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
 .left-botton-containers{
   width: 150px;
   background-color: rgba(253, 242, 90, 0.411);

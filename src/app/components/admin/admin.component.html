@@ -3,7 +3,7 @@
   <div class="side-menu">
     <!-- Logo -->
     <div class="d-flex p-1 mt-3 mb-5">
-      <a href="home" style="color: rgb(59, 59, 59);"><h4>MemoryShoot</h4></a>
+      <a href="home" style="color: rgb(59, 59, 59);"><h4>Panel Administrativo</h4></a>
       <!-- <img class="logo" src="./../../../assets/img/MemoryShootlogo.png" alt="MemoryShoot logo"> -->
     </div>
     <!-- Menu -->
@@ -15,7 +15,7 @@
             <button class="menu-option-button" (click)="chooseMenu('home')">
               <span>
                 <div class="inside-button-style">
-                  <a href="cliente"><img class="menu-option-img" src="./../../../assets/img/home-icon.png" alt="Home icon"></a>
+                  <a href="client"><img class="menu-option-img" src="./../../../assets/img/home-icon.png" alt="Home icon"></a>
                   <p>Home</p>
                 </div>
               </span>
@@ -51,13 +51,13 @@
     <header>
       <div class="header-container">
         <div class="profile-info">
-          <div class="profile-img-container"><img src="./../../../assets/img/face-adm.jpg" alt=""></div>
-          <h3>{{saludo}} {{admInfo.name}}!</h3>
+          <div class="profile-img-container"><img src="http://localhost:5200/{{adminInfo?.image}}" alt="Profile-picture"></div>
+          <h3>{{saludo}} {{adminInfo?.username}}!</h3>
         </div>
         <div class="d-flex flex-wrap gap-3 custom-header-icon-container">
           <a href="https://www.gmail.com"><img  src="./../../../assets/img/email.png" alt="email icon"></a>
           <!-- <img  src="./../../../assets/img/notification.png" alt="notification icon"> -->
-          <a href="cliente"><img  src="./../../../assets/img/account .png" alt="account icon"></a>
+          <a href="client"><img  src="./../../../assets/img/account .png" alt="account icon"></a>
         </div>
       </div>
     </header>

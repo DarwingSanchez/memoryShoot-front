@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admService/admin.service';
+import { UserService } from 'src/app/services/userService/user.service';
+import { User } from 'src/app/models/userModel';
+import { environment } from 'src/environments/environment';
+
+
 
 
 @Component({
@@ -13,31 +18,30 @@ export class AdminComponent implements OnInit {
   public hour: number = 0;
   public saludo : string = '';
   public menuChoosed : string = 'home'
+  public adminInfo: User | null = null
 
-
-  public admInfo = {
-    name: 'Darwing'
-  }
+  url_api = `${environment.API_URL}/`.replace('/api', '');
 
   constructor(
-    private admService : AdminService
+    private admService : AdminService,
+    public userService: UserService,
   ) {
     this.date = new Date;
   }
 
   ngOnInit(): void {
+    this.getAdminInfo()
     this.date = new Date
     this.getHour()
-    this.getAdmInfo()
     this.createNewVisit()
+  }
+
+  getAdminInfo() {
+    this.adminInfo = this.userService.decodeToken()
   }
 
   createNewVisit(){
     this.admService.getApiAdress()
-  }
-
-  getAdmInfo(){
-
   }
 
   chooseMenu(option: string){
